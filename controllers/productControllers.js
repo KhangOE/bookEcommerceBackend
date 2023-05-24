@@ -104,7 +104,8 @@ const getProduct = async (req, res) => {
     const sort = req.query.filter.sort;
     const search = req.query.filter.search;
     console.log(search);
-    const products = await Product.find().populate(["author", "category"]);
+    const products = await Product.find();
+    // .populate(["author", "category"]);
 
     const productsFilter = products.filter((p) => {
       return (
